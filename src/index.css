@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent-light: var(--accent-light);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+
+  --color-dark: var(--text-base);
+  --color-dark-light: var(--text-muted);
+
+  --color-night: #121214;
+
+  --color-soft: var(--bg-soft);
+  --color-background: var(--bg-base);
+  --color-card: var(--bg-card);
+
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+:root {
+  --bg-base: #ffffff;
+  --bg-soft: #F4F4F4;
+  --bg-card: #ffffff;
+  --text-base: #2A2F35;
+  --text-muted: #3E444D;
+  --accent-light: #FFB899;
+  --accent: #FF9F7C;
+  --accent-dark: #E88B69;
+
+  background-color: var(--bg-base);
+  color: var(--text-base);
+}
+
+.dark {
+  --bg-base: #121214;
+  --bg-soft: #1E1E22;
+  --bg-card: #1C1C1F;
+  --text-base: #F5F5F7;
+  --text-muted: #A1A1AA;
+  --accent-light: #FF9F7C;
+  --accent: #FF7043;
+  --accent-dark: #E88B69;
+
+  background-color: var(--bg-base);
+  color: var(--text-base);
+}
+
+body {
+  @apply font-sans text-dark;
+}
+
+@media (min-width: 1024px) {
+  * {
+    cursor: none !important;
+  }
+}
+
+.font-serif {
+  @apply font-serif;
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-light/20 rounded-full hover:bg-dark-light/40 transition-colors;
+}
+
+.glass {
+  @apply backdrop-blur-md border border-soft/10;
+  background-color: color-mix(in srgb, var(--bg-card) 70%, transparent);
+}
